@@ -154,7 +154,7 @@ image_build() {
 
     local cmd="docker build"
     if [ "$USE_BUILDAH" == "true" ]; then
-        cmd="buildah bud"
+        cmd="buildah bud --isolation=chroot"
     fi
 
     if ! logged "${log}" ${cmd} $@
@@ -199,6 +199,7 @@ image_push() {
 image_registry_login() {
     if [ "$IMAGE_REGISTRY_PUBLISH" == "true" ] && [ -n "$IMAGE_REGISTRY_PASSWORD" ]
     then
+        echo "USING BUILDAH " $USE_BUILDAH
         if [ "$USE_BUILDAH" == "true" ]
         then
             echo "$IMAGE_REGISTRY_PASSWORD" | buildah login -u "$IMAGE_REGISTRY_USERNAME" --password-stdin "$IMAGE_REGISTRY"
