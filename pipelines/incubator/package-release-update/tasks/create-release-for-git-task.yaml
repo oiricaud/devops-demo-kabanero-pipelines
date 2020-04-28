@@ -63,6 +63,8 @@ spec:
       image: $(inputs.params.asuh-image)
       script: |
         #!/usr/bin/env bash
+
+        export USE_BUILDAH="true"
         apt-get install -y jq bc tree wget curl git
         cd /workspace/source/ci
         pwd
