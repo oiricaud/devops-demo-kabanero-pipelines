@@ -81,3 +81,5 @@ Use these steps to trigger a Tekton pipeline build of your pipelines repository.
     ```
 
 1. Follow the [configuring a Kabanero CR instance](https://kabanero.io/docs/ref/general/configuration/kabanero-cr-config.html) documentation to configure or deploy a Kabanero instance with the `PIPELINES_URL` obtained in the previous step. 
+
+k

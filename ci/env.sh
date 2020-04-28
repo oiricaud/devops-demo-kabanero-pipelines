@@ -34,7 +34,7 @@ mkdir -p $build_dir
 # export INDEX_VERSION=SNAPSHOT
 
 # Use buildah instead of docker to build and push docker images when the value is true
-# export USE_BUILDAH=false
+export USE_BUILDAH=true
 
 # Specify a wrapper where required for long-running commands
 CI_WAIT_FOR=
