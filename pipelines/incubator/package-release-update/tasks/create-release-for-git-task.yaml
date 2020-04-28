@@ -94,26 +94,17 @@ spec:
 
 
     - name: publish-pipelines
-      image: $(inputs.params.asuh-image)
+      image: quay.io/buildah/stable
       script: |
         #!/usr/bin/env bash
 
-        apt-get update
-        apt-get remove docker docker-engine docker.io
-        apt install -y docker.io
-        systemctl start docker
-        systemctl enable docker
-        docker --version
+        yum update
 
-        apt-get install -y jq bc tree wget curl git
+        yum install -y jq bc tree wget curl git
 
         uname -a
-        cat /etc/issue
-        which docker
 
         cd /workspace/source/ci
-
-        docker version
 
         ./env.sh
         ./package.sh
@@ -122,10 +113,6 @@ spec:
         cat ./build/image.test-pipeline.SNAPSHOT.log
 
         tree .
-
-
-
-
 
       env:
         - name: IMAGE_REGISTRY_USERNAME
