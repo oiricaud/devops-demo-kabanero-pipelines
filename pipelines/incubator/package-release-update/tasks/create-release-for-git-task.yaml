@@ -64,7 +64,7 @@ spec:
       script: |
         #!/usr/bin/env bash
 
-        find --help
+
         export USE_BUILDAH="true"
         apt-get install -y jq bc tree wget curl git
         cd /workspace/source/ci
@@ -101,6 +101,8 @@ spec:
       script: |
         #!/usr/bin/env bash
 
+        echo "looking for find "
+        which find
         yum update
 
         yum install -y jq bc tree wget curl git
