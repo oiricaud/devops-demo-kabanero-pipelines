@@ -102,7 +102,7 @@ spec:
         #!/usr/bin/env bash
 
         yum update
-
+        $IMAGE_REGISTRY_ORG=yellocabins
         yum install -y jq bc tree wget curl git which findutils
         echo "which find... "
         which find
@@ -129,7 +129,7 @@ spec:
             secretKeyRef:
               name: oscar-ricaud-docker
               key: password
-        - name: IMAGE_REGISTRY_ORG
+        - name: IMAGE_REGISTRY
           value: $(inputs.params.registry)
         - name: INDEX_IMAGE
           value: $(inputs.params.index-image)
