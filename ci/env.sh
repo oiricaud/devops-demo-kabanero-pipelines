@@ -203,7 +203,7 @@ image_registry_login() {
         echo "USING BUILDAH " $USE_BUILDAH
         if [ "$USE_BUILDAH" == "true" ]
         then
-            echo "$IMAGE_REGISTRY_PASSWORD" | buildah login -u "$IMAGE_REGISTRY_USERNAME" --password-stdin "$IMAGE_REGISTRY"
+            echo "$IMAGE_REGISTRY_PASSWORD" | buildah login -u "$IMAGE_REGISTRY_USERNAME" --password-stdin "$IMAGE_REGISTRY" --isolation=chroot
         else
             echo "$IMAGE_REGISTRY_PASSWORD" |  docker login -u "$IMAGE_REGISTRY_USERNAME" --password-stdin "$IMAGE_REGISTRY"
         fi
