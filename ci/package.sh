@@ -45,6 +45,7 @@ exec_hooks $script_dir/ext/post_package.d
 
 nginx_arg=
 
+echo "TEST: $IMAGE_REGISTRY_ORG/$INDEX_IMAGE:${INDEX_VERSION}"
 echo "BUILDING: $IMAGE_REGISTRY_ORG/$INDEX_IMAGE:${INDEX_VERSION}" > ${build_dir}/image.$INDEX_IMAGE.${INDEX_VERSION}.log
 if image_build ${build_dir}/image.$INDEX_IMAGE.${INDEX_VERSION}.log \
     $nginx_arg \

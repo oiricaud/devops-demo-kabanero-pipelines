@@ -182,7 +182,7 @@ image_push() {
 
         echo "Pushing $name"
         if [ "$USE_BUILDAH" == "true" ]; then
-            buildah push --isolation=chroot --tls-verify=false $name
+            buildah push --tls-verify=false $name
         else
             docker push $name
         fi

@@ -129,7 +129,6 @@ spec:
             secretKeyRef:
               name: oscar-ricaud-docker
               key: password
-
         - name: IMAGE_REGISTRY
           value: $(inputs.params.registry)
         - name: INDEX_IMAGE
