@@ -154,7 +154,8 @@ image_build() {
 
     local cmd="docker build"
     if [ "$USE_BUILDAH" == "true" ]; then
-        cmd="buildah bud --isolation=chroot"
+        echo "WE ARE ABOUT TO BUILD SON"
+        cmd="buildah bud --isolation=chroot --log-level 3"
     fi
 
     if ! logged "${log}" ${cmd} $@
