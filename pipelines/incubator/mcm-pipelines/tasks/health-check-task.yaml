@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1alpha1
 kind: Task
 metadata:
-  name: health-check-task
+  name: StackId-health-check-task
   namespace: kabanero
 spec:
   inputs:
